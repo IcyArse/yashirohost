@@ -1,4 +1,6 @@
 import discord
+import random
+from gif_list import wavelist, huglist
 from globals1 import TOKEN, PREFIX
 from discord.ext import commands
 from functions import embed
@@ -68,6 +70,32 @@ async def on_ready():
 
     await client.get_channel(824596004242194485).send(f"{client.user.mention} Im AWAKE!!")
 
+
+#gifs
+
+#wave
+@client.command(aliases=["hi","hello","hey"])
+async def wave(ctx):
+    description = f"{ctx.author.mention} is Waving"
+    gif = wavelist[random.randint(0, len(wavelist)) - 9]
+    embeded = await embed(description=description, image=gif, client=client)
+    await ctx.send(embed=embeded)
+
+# pat
+@client.command()
+async def hug(ctx):
+    try:
+        if ctx.message.mentions:
+            description = f"{ctx.author.mention} has hugged {ctx.message.mentions[0].mention}! Cute!"
+            gif = huglist[random.randint(0, len(huglist)) - 3]
+            embeded = await embed(description=description, image=gif, client=client)
+            await ctx.send(embed=embeded)
+        else:
+            description = f"You need to tell me who you want to hug."
+            embeded = await embed(description=description, client=client)
+            await ctx.send(embed=embeded)
+    except:
+        print("There was a problem with the hug command")
 
 
 client.run(TOKEN)
