@@ -25,21 +25,22 @@ async def on_member_join(member):
 
 # kick
 @client.command()
+@commands.has_permissions(manage_messages=True)
 async def kick(ctx, member: discord.Member, *, reason=None):
-    if ctx.author in ctx.guild.get_role(825026101528756224).members:
         await member.kick(reason=reason)
         await ctx.send(f"{member.mention} has been kicked")
-    else:
-        await ctx.reply("You are not allowed to use that command")
+
 
 
 # ban
 @client.command()
+@commands.has_permissions(manage_messages=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
-    if ctx.author in ctx.guild.get_role(825026101528756224).members:
         await member.ban(reason=reason)
-    else:
-        await ctx.reply("You are not allowed to use that command ")
+        await ctx.send(f"{member.mention} has been banned")
+
+
+
 
 
 #purge
