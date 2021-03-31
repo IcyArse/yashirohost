@@ -39,23 +39,13 @@ async def on_member_join(member):
 
 
 
-# goodbye
+
+# bye
 @client.event
 async def on_member_remove(member):
-
-    image_link = "https://media.discordapp.net/attachments/814539604472496168/823988886082420796/20210323_203731.gif"
-    title = "welcome to __hanako__ <3"
-    content = dedent(f"""
-    <@!{member.id}>
-    ,, <#807544089016401931>
-    ,, <#824269867166203955>
-    ,, <#807559580863299604>
-    """)
-
-    welcome_embed = await embed(title=title, description=content, thumbnail=image_link, colour=0x2f3136)
-
-    await client.get_channel(824596004242194485).send(embed=welcome_embed)
-
+    print(f'{member.name} has left the server! 😭')
+    channel = discord.utils.get(member.guild.text_channels, name="welcome and goodbyes")
+    await channel.send(f"{member.mention} has left the server! 😭")
 
 
 
