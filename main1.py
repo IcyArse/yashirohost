@@ -1,24 +1,61 @@
 import discord
+from textwrap import dedent
 import random
-from gif_list import wavelist, huglist
+from discord import channel
+
 from globals1 import TOKEN, PREFIX
+
 from discord.ext import commands
 from functions import embed
+from gif_list import wavelist, huglist, kisslist
 
 
 
+intents = discord.Intents.default()# sets intents as an instant if intents
+intents.members = True# sets intents for members true so we use members from the server
 
-intents = discord.Intents().all()
-client = commands.Bot(command_prefix=PREFIX,case_insensitive=True  )
+client = commands.Bot(command_prefix=PREFIX, case_insensitive=True, intents=intents)
+
+
 
 #welcome_message
 
 # welcome
 @client.event
 async def on_member_join(member):
-    print(f"{member.name} has joined Welcome! 😊 ")
-    channel = discord.utils.get(member.guild.text_channels, name="welcome and goodbyes")
-    await channel.send(f"{member.mention} has joined! 😊")
+
+    image_link = "https://media.discordapp.net/attachments/814539604472496168/823988886082420796/20210323_203731.gif"
+    title = "welcome to __hanako__ <3"
+    content = dedent(f"""
+    <@!{member.id}>
+    ,, <#807544089016401931>
+    ,, <#824269867166203955>
+    ,, <#807559580863299604>
+    """)
+
+    welcome_embed = await embed(title=title, description=content, thumbnail=image_link, colour=0x2f3136)
+
+    await client.get_channel(824596004242194485).send(embed=welcome_embed)
+
+
+
+# goodbye
+@client.event
+async def on_member_remove(member):
+
+    image_link = "https://media.discordapp.net/attachments/814539604472496168/823988886082420796/20210323_203731.gif"
+    title = "welcome to __hanako__ <3"
+    content = dedent(f"""
+    <@!{member.id}>
+    ,, <#807544089016401931>
+    ,, <#824269867166203955>
+    ,, <#807559580863299604>
+    """)
+
+    welcome_embed = await embed(title=title, description=content, thumbnail=image_link, colour=0x2f3136)
+
+    await client.get_channel(824596004242194485).send(embed=welcome_embed)
+
 
 
 
@@ -27,22 +64,21 @@ async def on_member_join(member):
 
 # kick
 @client.command()
-@commands.has_permissions(manage_messages=True)
 async def kick(ctx, member: discord.Member, *, reason=None):
+    if ctx.author in ctx.guild.get_role(825026101528756224).members:
         await member.kick(reason=reason)
         await ctx.send(f"{member.mention} has been kicked")
-
+    else:
+        await ctx.reply("You are not allowed to use that command")
 
 
 # ban
 @client.command()
-@commands.has_permissions(manage_messages=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
+    if ctx.author in ctx.guild.get_role(825026101528756224).members:
         await member.ban(reason=reason)
-        await ctx.send(f"{member.mention} has been banned")
-
-
-
+    else:
+        await ctx.reply("You are not allowed to use that command ")
 
 
 #purge
@@ -70,33 +106,51 @@ async def on_ready():
 
     await client.get_channel(824596004242194485).send(f"{client.user.mention} Im AWAKE!!")
 
-
 #gifs
 
-#wave
-@client.command(aliases=["hi","hello","hey"])
+@client.command(aliases=["hey", "hi", "hello"])
 async def wave(ctx):
-    description = f"{ctx.author.mention} is Waving"
-    gif = wavelist[random.randint(0, len(wavelist)) - 9]
-    embeded = await embed(description=description, image=gif, client=client)
-    await ctx.send(embed=embeded)
+    descriptionhappy = f"{ctx.author.mention} Is Happy! 😄"
+    gif = wavelist[random.randint(0, len(wavelist)) - 11]
+    embededhappy = await embed(description=descriptionhappy, image=gif, client=client)
+    await ctx.send(embed=embededhappy)
 
-# pat
-@client.command()
+
+# mad
+@client.command(aliases= ["hold"])
 async def hug(ctx):
     try:
         if ctx.message.mentions:
-            description = f"{ctx.author.mention} has hugged {ctx.message.mentions[0].mention}! Cute!"
-            gif = huglist[random.randint(0, len(huglist)) - 3]
-            embeded = await embed(description=description, image=gif, client=client)
-            await ctx.send(embed=embeded)
+            descriptionmad = f"{ctx.author.mention} is hugging {ctx.message.mentions[0].mention}! awww how nice!"
+            gif = huglist[random.randint(0, len(huglist)) - 10]
+            embededmad = await embed(description=descriptionmad, image=gif, client=client)
+            await ctx.send(embed=embededmad)
         else:
-            description = f"You need to tell me who you want to hug."
-            embeded = await embed(description=description, client=client)
-            await ctx.send(embed=embeded)
+            descriptionmad = f"You need to tell us who you wan,t hug."
+            embededmad = await embed(description=descriptionmad, client=client)
+            await ctx.send(embed=embededmad)
     except:
-        print("There was a problem with the hug command")
+        print("There was a problem with hug()")
+
+
+# mad
+@client.command()
+async def kiss(ctx):
+    try:
+        if ctx.message.mentions:
+            descriptionmad = f"{ctx.author.mention} is kissing {ctx.message.mentions[0].mention}! soo cute!!!"
+            gif = kisslist[random.randint(0, len(kisslist)) - 9]
+            embededmad = await embed(description=descriptionmad, image=gif, client=client)
+            await ctx.send(embed=embededmad)
+        else:
+            descriptionmad = f"You need to tell us who you wan,t kiss."
+            embededmad = await embed(description=descriptionmad, client=client)
+            await ctx.send(embed=embededmad)
+    except:
+        print("There was a problem with kiss()")
+
+
+
 
 
 client.run(TOKEN)
-

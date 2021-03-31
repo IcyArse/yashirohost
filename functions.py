@@ -8,7 +8,7 @@ import random
 
 
 global embed
-async def embed(title = None, colour = 0x2f3136, link = None, description = None, fields = None, image = None, thumbnail = None, author = None, footer = True , timestamp = True, client = None):
+async def embed(title = None, colour = 0x2f3136, link = None, description = None, fields = None, image = None, thumbnail = None, author = None, footer = None , timestamp = True, client = None):
     embed = discord.Embed()
     if title:
         embed.title = title
@@ -36,4 +36,4 @@ async def embed(title = None, colour = 0x2f3136, link = None, description = None
 #imageembed
 async def image_embed(title, image):
     image_embed = await embed(title = title, image = image, colour= 0xFF5733)
-    return image_embed
+    return

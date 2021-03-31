@@ -1,4 +1,4 @@
-global wavelist, huglist
+global wavelist, huglist, kisslist
 
 
 #wave
@@ -7,3 +7,7 @@ wavelist = ["https://media1.tenor.com/images/3315fb7e112bb11fa94115f4b9a24131/te
 
 #hug
 huglist = ["https://media1.tenor.com/images/bb9c0c56769afa3b58b9efe5c7bcaafb/tenor.gif?itemid=16831471", "https://media1.tenor.com/images/b77fd0cfd95f89f967be0a5ebb3b6c6a/tenor.gif?itemid=7864716", "https://media1.tenor.com/images/7db5f172665f5a64c1a5ebe0fd4cfec8/tenor.gif?itemid=9200935", "https://media1.tenor.com/images/daffa3b7992a08767168614178cce7d6/tenor.gif?itemid=15249774", "https://media1.tenor.com/images/7e30687977c5db417e8424979c0dfa99/tenor.gif?itemid=10522729", "https://media1.tenor.com/images/4d89d7f963b41a416ec8a55230dab31b/tenor.gif?itemid=5166500", "https://media1.tenor.com/images/6db54c4d6dad5f1f2863d878cfb2d8df/tenor.gif?itemid=7324587", "https://media1.tenor.com/images/969f0f462e4b7350da543f0231ba94cb/tenor.gif?itemid=14246498", "https://media1.tenor.com/images/78d3f21a608a4ff0c8a09ec12ffe763d/tenor.gif?itemid=16509980", "https://media1.tenor.com/images/1069921ddcf38ff722125c8f65401c28/tenor.gif?itemid=11074788","https://media1.tenor.com/images/94989f6312726739893d41231942bb1b/tenor.gif?itemid=14106856"]
+
+
+#kiss
+kisslist = ["https://media1.tenor.com/images/d1a11805180742c70339a6bfd7745f8d/tenor.gif?itemid=4883557", "https://media.tenor.com/images/675bda829f4f65ac9b94c1fc50f21e5f/tenor.gif", "https://media1.tenor.com/images/7fd98defeb5fd901afe6ace0dffce96e/tenor.gif?itemid=9670722", "https://media1.tenor.com/images/d0cd64030f383d56e7edc54a484d4b8d/tenor.gif?itemid=17382422", "https://media.tenor.com/images/f07912128d9c744806f757909c72ae8f/tenor.gif","https://media1.tenor.com/images/78095c007974aceb72b91aeb7ee54a71/tenor.gif?itemid=5095865", "https://media1.tenor.com/images/bc5e143ab33084961904240f431ca0b1/tenor.gif?itemid=9838409", "https://media.tenor.com/images/5858b831da3d37355e88c76124d5ec55/tenor.gif", "https://media1.tenor.com/images/a390476cc2773898ae75090429fb1d3b/tenor.gif?itemid=12837192", "https://media.tenor.com/images/fbec924087ea66531fcb0924c44a9525/tenor.gif"]
