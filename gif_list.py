@@ -1,4 +1,4 @@
-global wavelist, huglist, kisslist
+global wavelist, huglist, kisslist,  slaplist, punchlist, bitelist
 
 
 #wave
@@ -11,3 +11,15 @@ huglist = ["https://media1.tenor.com/images/bb9c0c56769afa3b58b9efe5c7bcaafb/ten
 
 #kiss
 kisslist = ["https://media1.tenor.com/images/d1a11805180742c70339a6bfd7745f8d/tenor.gif?itemid=4883557", "https://media.tenor.com/images/675bda829f4f65ac9b94c1fc50f21e5f/tenor.gif", "https://media1.tenor.com/images/7fd98defeb5fd901afe6ace0dffce96e/tenor.gif?itemid=9670722", "https://media1.tenor.com/images/d0cd64030f383d56e7edc54a484d4b8d/tenor.gif?itemid=17382422", "https://media.tenor.com/images/f07912128d9c744806f757909c72ae8f/tenor.gif","https://media1.tenor.com/images/78095c007974aceb72b91aeb7ee54a71/tenor.gif?itemid=5095865", "https://media1.tenor.com/images/bc5e143ab33084961904240f431ca0b1/tenor.gif?itemid=9838409", "https://media.tenor.com/images/5858b831da3d37355e88c76124d5ec55/tenor.gif", "https://media1.tenor.com/images/a390476cc2773898ae75090429fb1d3b/tenor.gif?itemid=12837192", "https://media.tenor.com/images/fbec924087ea66531fcb0924c44a9525/tenor.gif"]
+
+
+#slap
+slaplist = ["https://media1.tenor.com/images/10e77248b56ff4d874c3d0f14cfcad17/tenor.gif?itemid=18965728", "https://media1.tenor.com/images/477821d58203a6786abea01d8cf1030e/tenor.gif?itemid=7958720", "https://media1.tenor.com/images/9ea4fb41d066737c0e3f2d626c13f230/tenor.gif?itemid=7355956", "https://media1.tenor.com/images/0a3e109296e16977a61ed28c1e5bf7bf/tenor.gif?itemid=5122897", "https://media1.tenor.com/images/e8f880b13c17d61810ac381b2f6a93c3/tenor.gif?itemid=17897236", "https://media1.tenor.com/images/153b2f1bfd3c595c920ce60f1553c5f7/tenor.gif?itemid=10936993", "https://media1.tenor.com/images/2b3a3e107ac57d4f170a8f8e414fec9f/tenor.gif?itemid=17596956", "https://media1.tenor.com/images/1ba1ea1786f0b03912b1c9138dac707c/tenor.gif?itemid=5738394", "https://media1.tenor.com/images/37c72d1a4a4ad8108897642f7bebc4be/tenor.gif?itemid=17845941", "https://media1.tenor.com/images/0860d681fbe7ad04a2f39735ab939176/tenor.gif?itemid=13642334"]
+
+
+#punch
+punchlist = ["https://media1.tenor.com/images/ce04fdc2e6d0242319f9342d4c929cca/tenor.gif?itemid=20094842", "https://media1.tenor.com/images/593fb53c00359775de49ef442e57d7ac/tenor.gif?itemid=20983396", "https://media1.tenor.com/images/729a6f041cfbe4187e2eaf8859affee1/tenor.gif?itemid=20983376", "https://media1.tenor.com/images/313bb02914ddb9262511b790ef4d4c7b/tenor.gif?itemid=7922535", "https://media1.tenor.com/images/1c986c555ed0b645670596d978c88f6e/tenor.gif?itemid=13142581", "https://media1.tenor.com/images/c621075def6ca41785ef4aaea20cc3a2/tenor.gif?itemid=7679409", "https://media1.tenor.com/images/4f3603010f0071227affbf2f732d79be/tenor.gif?itemid=10769541", "https://media1.tenor.com/images/175cf269b6df62b75a5d25a0ed45e954/tenor.gif?itemid=20976942"]
+
+
+#bite
+bitelist = ["https://media1.tenor.com/images/418a2765b0bf54eb57bab3fde5d83a05/tenor.gif?itemid=12151511", "https://media1.tenor.com/images/2a11c95dc96bb7ff64297f66b8a1b019/tenor.gif?itemid=12388163", "https://media1.tenor.com/images/8409bd65be28e7bcc5a7630c4ebbdcca/tenor.gif?itemid=15992229", "https://media1.tenor.com/images/6dd67bd831780c4a754cb33697cddcb6/tenor.gif?itemid=10095819", "https://media1.tenor.com/images/83271613ed73fd70f6c513995d7d6cfa/tenor.gif?itemid=4915753", "https://media1.tenor.com/images/432a41a6beb3c05953c769686e8c4ce9/tenor.gif?itemid=4704665", "https://media1.tenor.com/images/785facc91db815ae613926cddb899ed4/tenor.gif?itemid=17761094", "https://media1.tenor.com/images/3baeaa0c5ae3a1a4ae9ac2780b2d965d/tenor.gif?itemid=13342683", "https://media1.tenor.com/images/f3f456723f2f8735d118b43823c837f5/tenor.gif?itemid=14659250", "https://media1.tenor.com/images/6ab39603ef0dd6dbfc78ba20885b991f/tenor.gif?itemid=8220087"]

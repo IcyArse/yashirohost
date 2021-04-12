@@ -2,3 +2,5 @@ global TOKEN
 TOKEN = "ODI0NTc3NTQwNTcxNTI5MjY3.YFxZrQ.Y8PIUInJd2QnsnFoPB9LKub2k5U"
 global PREFIX
 PREFIX = "."
+global muterole
+muterole = 827194246817775646
