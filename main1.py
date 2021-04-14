@@ -1,18 +1,25 @@
 import discord
-from textwrap import dedent
 import random
 import pytz
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import datetime
 
+from textwrap import dedent
+from gif_list import wavelist, huglist, kisslist,  slaplist, punchlist, bitelist
+
+
 from discord import channel
+from discord.ext import commands
+
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from globals1 import TOKEN, PREFIX, muterole
 
 
 from discord.ext import commands
 from functions import embed
-from gif_list import wavelist, huglist, kisslist
+
+
+muted_user_roles = {}
 
 
 
@@ -34,24 +41,16 @@ async def on_member_join(member):
     title = "welcome to __hanako__ <3"
     content = dedent(f"""
     <@!{member.id}>
+
     ,, <#807544089016401931>
     ,, <#824269867166203955>
     ,, <#807559580863299604>
+
     """)
 
     welcome_embed = await embed(title=title, description=content, thumbnail=image_link, colour=0x2f3136)
 
     await client.get_channel(824596004242194485).send(embed=welcome_embed)
-
-
-
-
-# bye
-@client.event
-async def on_member_remove(member):
-    print(f'{member.name} has left the server! 😭')
-    channel = discord.utils.get(member.guild.text_channels, name="welcome and goodbyes")
-    await channel.send(f"{member.mention} has left the server! 😭")
 
 
 
@@ -102,11 +101,12 @@ async def on_ready():
 
     await client.get_channel(824596004242194485).send(f"{client.user.mention} Im AWAKE!!")
 
+
 #gifs
 
 @client.command(aliases=["hey", "hi", "hello"])
 async def wave(ctx):
-    descriptionhappy = f"{ctx.author.mention} Is Happy! 😄"
+    descriptionhappy = f"{ctx.author.mention} Is Happy! ðŸ˜„"
     gif = wavelist[random.randint(0, len(wavelist)) - 11]
     embededhappy = await embed(description=descriptionhappy, image=gif, client=client)
     await ctx.send(embed=embededhappy)
@@ -129,7 +129,7 @@ async def hug(ctx):
         print("There was a problem with hug()")
 
 
-# mad
+# kiss
 @client.command()
 async def kiss(ctx):
     try:
@@ -145,8 +145,58 @@ async def kiss(ctx):
     except:
         print("There was a problem with kiss()")
 
+#slap
+@client.command()
+async def slap(ctx):
+    try:
+        if ctx.message.mentions:
+            description = f"{ctx.author.mention} is slapped {ctx.message.mentions[0].mention} ouch"
+            gif = slaplist[random.randint(0, len(slaplist)) - 9]
+            embeded = await embed(description=description, image=gif, client=client)
+            await ctx.send(embed=embeded)
+        else:
+            description = f"You need to tell us who you wan,t to slap."
+            embeded = await embed(description=description, client=client)
+            await ctx.send(embed=embeded)
+    except:
+        print("There was a problem with slap()")
 
 
+
+#punch
+@client.command()
+async def punch(ctx):
+    try:
+        if ctx.message.mentions:
+            description = f"{ctx.author.mention} is has punched {ctx.message.mentions[0].mention} ouch"
+            gif = punchlist[random.randint(0, len(punchlist)) - 7]
+            embeded = await embed(description=description, image=gif, client=client)
+            await ctx.send(embed=embeded)
+        else:
+            description = f"You need to tell us who you wan,t to punch."
+            embeded = await embed(description=description, client=client)
+            await ctx.send(embed=embeded)
+    except:
+        print("There was a problem with punch()")
+
+
+#bite
+@client.command(aliases= ["nom","nibble"])
+async def bite(ctx):
+    try:
+        if ctx.message.mentions:
+            description = f"{ctx.author.mention} has bitten {ctx.message.mentions[0].mention} yumm!"
+            gif = bitelist[random.randint(0, len(bitelist)) - 9]
+            embeded = await embed(description=description, image=gif, client=client)
+            await ctx.send(embed=embeded)
+        else:
+            description = f"You need to tell us who you wan,t to bite."
+            embeded = await embed(description=description, client=client)
+            await ctx.send(embed=embeded)
+    except:
+        print("There was a problem with bite()")
+
+        
 #mute role
 @client.command(name="muterole")
 @commands.has_permissions(mute_members=True)
@@ -209,7 +259,7 @@ async def on_message(ctx):
 
 
 #mute
-@client.command(name="mute", help="mute's the mentioned user")
+@client.command(name="mute")
 @commands.has_permissions(mute_members=True)
 async def on_message(ctx, member: discord.Member, *timemute):
 
@@ -347,7 +397,7 @@ async def on_message(ctx, member: discord.Member, *timemute):
 
 
 #unmute
-@client.command(name="unmute", help="unmutes the mentioned user")
+@client.command(name="unmute")
 @commands.has_permissions(mute_members=True)
 async def on_message(ctx, member: discord.Member):
 
@@ -383,5 +433,5 @@ async def test(ctx, role: discord.Role):
     print(role.id)
 
 
-
 client.run(TOKEN)
+

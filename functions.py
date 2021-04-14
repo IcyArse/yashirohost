@@ -36,4 +36,4 @@ async def embed(title = None, colour = 0x2f3136, link = None, description = None
 #imageembed
 async def image_embed(title, image):
     image_embed = await embed(title = title, image = image, colour= 0xFF5733)
-    return
+    return image_embed
