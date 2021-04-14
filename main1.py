@@ -1,13 +1,10 @@
 import discord
 from textwrap import dedent
-<<<<<<< Updated upstream
 import random
-=======
 import pytz
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import datetime
 
->>>>>>> Stashed changes
 from discord import channel
 
 from globals1 import TOKEN, PREFIX, muterole
@@ -25,6 +22,7 @@ intents.members = True# sets intents for members true so we use members from the
 client = commands.Bot(command_prefix=PREFIX, case_insensitive=True, intents=intents)
 
 scheduler = AsyncIOScheduler()
+muted_user_roles = {}
 
 #welcome_message
 
@@ -149,8 +147,6 @@ async def kiss(ctx):
 
 
 
-<<<<<<< Updated upstream
-=======
 #mute role
 @client.command(name="muterole")
 @commands.has_permissions(mute_members=True)
@@ -374,6 +370,7 @@ async def on_message(ctx, member: discord.Member):
                         await member.add_roles(role)
 
                 await ctx.send(f"{member.name} has been unmuted")
+                mentioned_roles_id_list = []
 
         except:
                 # if the mentioned user is invalid
@@ -385,7 +382,6 @@ async def on_message(ctx, member: discord.Member):
 async def test(ctx, role: discord.Role):
     print(role.id)
 
->>>>>>> Stashed changes
 
 
 client.run(TOKEN)
