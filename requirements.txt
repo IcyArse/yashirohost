@@ -1,6 +1,4 @@
 discord.py
 pytz
 datetime
-random
-textwrap
 apscheduler
